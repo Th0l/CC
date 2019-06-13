@@ -1,0 +1,22 @@
+//
+// Do any local configuration here
+//
+zone "cc.pt" IN{
+	type master;
+	file "/home/core/primario/db.cc.pt";
+	allow-transfer {10.2.2.3;};
+	notify yes;
+	allow-update {10.2.2.3;}; 
+};
+
+zone "1.1.10.in-addr.arpa" IN{
+	type master;
+	file "/home/core/primario/db.1-1-10.rev";
+	allow-transfer {10.2.2.3;};
+	notify yes;
+	allow-update {10.2.2.3;};
+};
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/home/core/primario/zones.rfc1918";
